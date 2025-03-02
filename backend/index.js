@@ -1,5 +1,5 @@
 const express = require('express'); //framework per creare server web con Node.js
-const cors = require('cors'); //per abilitare le richieste CORS, utile per permettere al frontend di comunicare con il backend
+const cors = require('cors'); //per abilitare le richieste CORS, si usa per permettere al frontend di comunicare con il backend
 const bodyParser = require('body-parser'); //per analizzare i dati inviati nelle richieste HTTP
 const QUESTION = [
     {
@@ -21,21 +21,23 @@ const QUESTION = [
         id: "sex",
         question: "What is your sex?",
         type:"radio",
-        options: ["Femmina ", "Maschio" , "TRANSformer"]
+        options: ["Femmina ", "Maschio"]
     },
     {   
         id: "skills",
         question: "What are your skills?",
         type: "checkbox",
-        options: ["Giocare a tennis", "Suonare il piano", "raccogliere cotone"]
+        options: ["Giocare a tennis", "Suonare il piano", "Saltare la corda"]
     }
 ]           
 //array QUESTION utilizzato per inviare un questionario al frontend
-// Create an express app
-const app = express(); //creazione di un'istanza dell'applicazione Express
+
+
+const app = express(); //creazione di un'istanza dell'applicazione Express chiamata app
 const port = 3000;
 
 let answers = [];
+
 
 //MIDDLEWARE: funzioni che vengono eseguite prima di arrivare alle route
 app.use(cors());

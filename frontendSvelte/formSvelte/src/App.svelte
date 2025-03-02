@@ -140,7 +140,7 @@ async function fetchResults() {
     <p>{formState.error}</p>
 {/if}
  
-{#snippet formStep ({id,question,type, options})} <!--Prende come parametri id, question e type destrutturati-->
+{#snippet formStep ({id,question,type, options})} <!--Prende come parametri id, question type e options destrutturati-->
 <div>
     <label for = {id}>{question} </label>
     <!--per collegare l'input a una variabile usiamo bind-->
